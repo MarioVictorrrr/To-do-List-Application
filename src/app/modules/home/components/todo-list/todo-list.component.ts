@@ -27,7 +27,16 @@ export class TodoListComponent {
   }
 
   public setTask(event: string){
-    this.taskList.push({id: 1, name: event, checked: false});
+    let nextId: number;
+    let lastIndex: number;
+    if(this.taskList.length > 0){
+      lastIndex = this.taskList.length-1;
+      nextId = this.taskList[lastIndex].id + 1;
+      this.taskList.push({id: nextId, name: event, checked: false});
+    } else {
+      this.taskList.push({id: 1, name: event, checked: false});
+    }
+
 
   }
 

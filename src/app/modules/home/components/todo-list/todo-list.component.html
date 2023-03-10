@@ -5,7 +5,7 @@
 
 <li *ngFor="let item of taskList; index as i">
     <input type="checkbox" [(ngModel)]="item.checked">
-    <input type="text" [(ngModel)]="item.name">
+    <input type="text" [(ngModel)]="item.name" [ngClass]="{'checked': item.checked}">
 
     <button (click)="deleteTask(i)">
         <img src="assets\icons\trash.png" width="14px" height="14px">
